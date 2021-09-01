@@ -101,7 +101,7 @@
             <div class="row align-items-center">
               <div class="col-lg-6">
                 <div class="slider-content">
-                  <span data-animation="fadeInUp" data-delay=".2s"><small>I am a Freelancer</small><br>Full Ftack Web and App Developer</span>
+                  <span data-animation="fadeInUp" data-delay=".2s"><small>I am a Freelancer</small><br><span>Full Ftack Web and App Developer</span></span>
                   <h2 id="email" data-animation="fadeInUp" data-delay=".4s">Hi, I Make Websites, Web Apps and Mobile Apps.</h2>
                   <p data-animation="fadeInUp" data-delay=".6s">A full-service with global capabilities across web / mobile design and development.</p>
                   <div class="slider-btn mt-45">
@@ -202,8 +202,9 @@
             </div>
             <div class="about-content">
               <h5></h5>
-              <p>I merge imagination and technology to help brands grow in an age of digital transformation.<br>I serve up Website designs coded with today’s modern technologies, SEO improvements.</p>
-              <a href="#email" class="btn">Send Me An Email</a>
+              <p class="mb-0">I merge imagination and technology to help brands grow in an age of digital transformation.</p><br>
+              <p>I serve up Website designs coded with today’s modern technologies, SEO improvements.</p>
+              <a onclick="this.innerText = atob('cmVkYWJlbGNhOTZAZ21haWwuY29t'); this.classList.toggle('btn-active'); this.href='mailto:' + this.innerText;" href="#email" class="btn">Send Me An Email</a>
             </div>
           </div>
         </div>
@@ -502,6 +503,59 @@
   <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    let translations = {
+        "Web And App Development - Freelancer" : "Développement Web et App - Freelance",
+        "Home" : "Accueil",
+        "Contact" : "Contact",
+        "My Works" : "Mes travaux",
+        "Skills" : "Compétences",
+        "Portfolio" : "Portefeuille",
+        "Technologies" : "Les technologies",
+        "I am a Freelancer" : "je suis indépendant",
+        "Full Ftack Web and App Developer" : "Développeur Web et Appli Full Ftack",
+        "Hi, I Make Websites, Web Apps and Mobile Apps." : "Bonjour, je crée des sites Web, des applications Web et des applications mobiles.",
+        "A full-service with global capabilities across web / mobile design and development." : "Un service complet avec des capacités pour la conception et le développement Web / mobile.",
+        "Send Me An Email" : "Envoie-moi un email",
+        "Whatsapp Us" : "Whatsapp Me",
+        "Intro Video" : "Vidéo d'introduction",
+        "about me" : "À propos de moi",
+        "I am a Full Ftack Web and App Developer." : "Je suis un développeur Web et d'applications Full Ftack.",
+        "I merge imagination and technology to help brands grow in an age of digital transformation." : "Je fusionne l'imagination et la technologie pour aider les entreprises à se développer à l'ère de la transformation numérique.",
+        "I serve up Website designs coded with today’s modern technologies, SEO improvements." : "Je propose des conceptions de sites Web codées avec les technologies modernes d'aujourd'hui, des améliorations du référencement.",
+        "Send Me An Email" : "Envoie-moi un email",
+        "services" : "services",
+        "What I Do With My Own Hand." : "Ce que je fais.",
+        "Web Design" : "Création de sites web",
+        "My skills in web design helps me create custom designs that are human-centered and conversion focused." : "Mes compétences en conception de sites Web m'aident à créer des conceptions personnalisées centrées sur l'humain et axées sur la conversion.",
+        "Development" : "Développement",
+        "Armed with the latest technology, my front and back-end development skills bring your designs to life. I develop for the now and build for the future." : "Armé des dernières technologies, mes compétences en développement front-end et back-end donnent vie à vos conceptions. Je développe pour le present et construit pour l'avenir.",
+        "Mobile App Development" : "Développement d'applications mobiles",
+        "To build an app means to use all the capabilities of the mobile devices. It means not to compromise on experience you create for the user." : "Créer une application signifie utiliser toutes les capacités des appareils mobiles. Cela signifie ne pas faire de compromis sur l'expérience que vous créez pour l'utilisateur.",
+        "Backend Services" : "Services Back-End",
+        "API development using Node.js® or PHP, Database solutions using MySQL, RESTful JSON API" : "Développement d'API à l'aide de Node.js® ou PHP, Solutions de bases de données à l'aide de MySQL, API RESTful JSON",
+        "My skills" : "Mes compétences",
+        "We Give You Both Graphic & Technical Quality Style." : "Nous vous offrons un style de qualité graphique et technique.",
+        "Design" : "Design",
+        "development" : "développement",
+        "Backend Skills" : "Compétences Backend",
+        "ui/ux" : "ui/ux",
+        "portfolio" : "portefeuille",
+        "Digital Projects " : "Projets Digital",
+        "Personal & For Minimal Business" : "Personnel et pour les entreprises",
+        "More Works" : "Plus de travaux",
+        "We Use These" : "Nous utilisons ces",
+        "Technologies" : "Les technologies",
+        "Engine Optimization" : "Optimisation du moteur",
+        "Software Development Services" : "Services de développement des Applications & Websites",
+        "Reda Belcaida" : "Reda Belcaida",
+        "BACK TO TOP" : "RETOUR AU SOMMET"
+      };
+      const $t = str => (!translations[str] || new URL(location.href).searchParams.get('l') == 'en') ?  str : translations[str]
+      const elsThatContainText = [...document.querySelectorAll(`*`)]
+        .filter(el => el.tagName != 'SCRIPT' && el.tagName != 'STYLE' && el.childNodes.length == 1 && el.childNodes[0].nodeName == '#text')
+      elsThatContainText.forEach(el => (el.innerHTML = $t(el.childNodes[0].textContent)))
+  </script>
 </body>
 
 </html>
